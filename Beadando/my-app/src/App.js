@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
         <h1>Web programozás-1 Előadás Házi feladat</h1>
       </header>
       <body>
-        
+        <h2>Valami</h2>
       </body>
       <footer>
         <p>Túri Balázs - GJ8N08</p>
