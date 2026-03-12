@@ -1,12 +1,17 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
 body {
     background-color:burlywood;
+    position: relative;
 } 
 header{
-    position:fixed;
+    position:absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    top: 0;
     background-color:lightgray;
-    left: 0;
     padding-left: 10px;
 }
 footer{
@@ -18,9 +23,9 @@ footer{
     padding-left: 10px;
 }
 nav {
-    position:fixed;
+    position:absolute;
     top: 80px;
-    left: 0;
+    left: 0px;
     width: 100%;
     background-color: rgb(255, 237, 135);
 }
