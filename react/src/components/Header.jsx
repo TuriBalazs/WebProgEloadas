@@ -16,12 +16,12 @@ function Header({ headerText }) {
                     <ul className="menu bg-base-200 min-h-full w-80 p-4">
                         {/* Sidebar content here */}
                         <li><Link to='/'>Címlap</Link></li>
-                        <li><Link>Javascript</Link></li>
-                        <li><Link>React</Link></li>
-                        <li><Link>SPA</Link></li>
+                        <li><Link to='/Javascript'>Javascript</Link></li>
+                        <li><Link to='/React'>React</Link></li>
+                        <li><Link to='/Spa'>SPA</Link></li>
                         <li><Link to='/Fetchapi'>Fetch</Link></li>
-                        <li><Link>Axios</Link></li>
-                        <li><Link>OOJS</Link></li>
+                        <li><Link to='/Axios'>Axios</Link></li>
+                        <li><Link to='/Oojs'>OOJS</Link></li>
                     </ul>
                 </div>
             </div>
