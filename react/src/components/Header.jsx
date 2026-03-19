@@ -5,7 +5,7 @@ function Header({ headerText }) {
     return (
         <div className="bg-info-content navbar py-10">
             <h1 className="text-3xl font-bold mx-5 navbar-start">{headerText}</h1>
-            <div className="drawer navbar-end mx-5">
+            <div className="drawer drawer-end navbar-end mx-5">
                 <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     {/* Page content here */}
