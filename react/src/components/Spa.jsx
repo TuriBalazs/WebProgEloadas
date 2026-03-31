@@ -1,104 +1,138 @@
+import React, { useState } from 'react';
+import '../styles.css'
+
 function Spa() {
+    const [text, setText] = useState('');
+    const [base64, setBase64] = useState('');
+    const [error, setError] = useState('');
+
+    const encodeToBase64 = () => {
+        try {
+            if (!text.trim()) {
+                setError('Please enter some text to encode');
+                return;
+            }
+            const encoded = btoa(unescape(encodeURIComponent(text)));
+            setBase64(encoded);
+            setError('');
+        } catch (err) {
+            setError('Error encoding text to Base64');
+        }
+    };
+
+    const decodeFromBase64 = () => {
+        try {
+            if (!base64.trim()) {
+                setError('Please enter Base64 to decode');
+                return;
+            }
+
+            const base64Regex = /^[A-Za-z0-9+/]*={0,2}$/;
+            if (!base64Regex.test(base64)) {
+                setError('Invalid Base64 format');
+                return;
+            }
+
+            const decoded = decodeURIComponent(escape(atob(base64)));
+            setText(decoded);
+            setError('');
+        } catch (err) {
+            setError('Error decoding Base64. Please check your input.');
+        }
+    };
+
+    const clearAll = () => {
+        setText('');
+        setBase64('');
+        setError('');
+    };
+
+    const copyToClipboard = (content) => {
+        navigator.clipboard.writeText(content)
+            .then(() => {
+                alert('Copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    };
+
     return (
-        <div className="min-h-screen">
-            <div className="">
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Joker.png?7edba" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+        <div>
+            <div className="navbar bg-base-100 shadow-sm">
+                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">daisyUI</a>
+            </div>
+            <div className="base64-converter">
+                <div className="input-section">
+                    <h3>Text Input</h3>
+                    <textarea
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        placeholder="Enter text to encode to Base64..."
+                        rows="5"
+                    />
+                    <div className="char-count">Characters: {text.length}</div>
+                    <div className="button-group">
+                        <button onClick={encodeToBase64} className="btn encode">
+                            Encode to Base64
+                        </button>
+                        <button onClick={() => copyToClipboard(text)} className="btn secondary">
+                            Copy Text
+                        </button>
+                    </div>
                 </div>
 
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Burnt_Joker.png?445f6" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div className="input-section">
+                    <h3>Base64 Input</h3>
+                    <textarea
+                        value={base64}
+                        onChange={(e) => setBase64(e.target.value)}
+                        placeholder="Enter Base64 to decode to text..."
+                        rows="5"
+                    />
+                    <div className="char-count">Characters: {base64.length}</div>
+                    <div className="button-group">
+                        <button onClick={decodeFromBase64} className="btn decode">
+                            Decode from Base64
+                        </button>
+                        <button onClick={() => copyToClipboard(base64)} className="btn secondary">
+                            Copy Base64
+                        </button>
+                    </div>
                 </div>
 
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Stuntman.png?84641" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Baseball_Card.png?97b3d" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                {error && (
+                    <div className="error-message">
+                        ⚠️ {error}
+                    </div>
+                )}
+
+                <div className="utility-buttons">
+                    <button onClick={clearAll} className="btn clear">
+                        Clear All
+                    </button>
                 </div>
 
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Baron.png?300d5" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-
-                <div className="hover-3d p-10">
-                    {/* content */}
-                    <figure className="w-35 rounded-2xl">
-                        <img src="https://balatrowiki.org/images/Vagabond.png?bacdb" alt="Tailwind CSS 3D hover" />
-                    </figure>
-                    {/* 8 empty divs needed for the 3D effect */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                {/* <div className="examples">
+        <h4>Quick Examples:</h4>
+        <div className="example-buttons">
+          <button 
+            onClick={() => setText('Hello World!')}
+            className="btn example"
+          >
+            Sample Text
+          </button>
+          <button 
+            onClick={() => setBase64('SGVsbG8gV29ybGQh')}
+            className="btn example"
+          >
+            Sample Base64
+          </button>
+        </div>
+      </div> */}
             </div>
         </div>
-        
     )
 }
 
