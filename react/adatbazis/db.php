@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$db   = "webprog";
+$db   = "hulladékudvar";
 $user = "root";
 $pass = "";
 try {
