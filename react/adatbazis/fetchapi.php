@@ -6,7 +6,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
     case 'GET':  
         try {
-            $stmt = $pdo->query("SELECT * FROM hely");
+            $stmt = $pdo->query("SELECT * FROM fajta");
             $readData=$stmt->fetchAll();
             echo json_encode(['status' => 'Read success!', "readData"=>$readData]);
         }
@@ -17,8 +17,8 @@ switch ($method) {
     case 'POST':
         try {
             $data = json_decode(file_get_contents("php://input"), true);
-            $stmt = $pdo->prepare("INSERT INTO hely (kerulet, cim) VALUES (?, ?)");
-            $stmt->execute([$data['kerulet'], $data['cim']]);
+            $stmt = $pdo->prepare("INSERT INTO fajta (nev) VALUES (?)");
+            $stmt->execute([$data['nev']]);
             echo json_encode(['status' => 'Create success!']);
         }
         catch(PDOException $e) {
@@ -28,8 +28,8 @@ switch ($method) {
     case 'PUT':
         try {
             $data = json_decode(file_get_contents("php://input"), true);
-            $stmt = $pdo->prepare("UPDATE hely SET kerulet=?, cim=? WHERE id=?");
-            $stmt->execute([$data['kerulet'], $data['cim'], $data['id']]);
+            $stmt = $pdo->prepare("UPDATE fajta SET nev=? WHERE id=?");
+            $stmt->execute([$data['nev'], $data['id']]);
             echo json_encode(['status' => 'Update success!']);
         }
         catch(PDOException $e) {
@@ -39,7 +39,7 @@ switch ($method) {
     case 'DELETE':
         try {
             $data = json_decode(file_get_contents("php://input"), true);
-            $stmt = $pdo->prepare("DELETE FROM hely WHERE id=?");
+            $stmt = $pdo->prepare("DELETE FROM fajta WHERE id=?");
             $stmt->execute([$data['id']]);
             echo json_encode(['status' => 'Delete success!']);
         }

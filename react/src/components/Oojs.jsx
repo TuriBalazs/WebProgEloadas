@@ -1,16 +1,33 @@
+
+
 function Oojs() {
+
+
+
     return (
-        <figure className="diff aspect-16/9" tabIndex={0}>
-            <div className="diff-item-1" role="img" tabIndex={0}>
-                <div className="bg-primary text-primary-content grid place-content-center text-9xl font-black">
-                    DAISY
-                </div>
-            </div>
-            <div className="diff-item-2" role="img">
-                <div className="bg-base-200 grid place-content-center text-9xl font-black">DAISY</div>
-            </div>
-            <div className="diff-resizer"></div>
-        </figure>
+        <div className="h-48">
+
+            <table>
+                <tr>
+                    <td align="right">x:</td><td><input type="text" id="x" name="x" /></td>
+                    <td align="right">y:</td><td><input type="text" id="y" name="y" /></td>
+                    <td><button onclick="myimage.putAt(x.value,y.value)">Put At</button></td>
+                </tr>
+                <tr>
+                    <td align="right">width:</td><td><input type="text" id="width" name="width" /></td>
+                    <td align="right">height:</td><td><input type="text" id="height" name="height" /></td>
+                    <td><button onclick="myimage.resize(width.value,height.value)">Resize</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td><button onclick="myimage.show()">Show</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td><button onclick="myimage.hide()">Hide</button></td>
+                </tr>
+            </table>
+        </div>
     )
 }
 

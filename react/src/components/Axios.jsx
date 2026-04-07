@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Axios() {
-    const [hely, setHely] = useState([]);
+    const [helyek, setHelyek] = useState([]);
     const [message, setMessage] = useState("");
     const [cim, setCim] = useState("");
     const [kerulet, setKerulet] = useState("");
     const [editId, setEditId] = useState(null);
 
     useEffect(() => {
-        fetchHely();
+        fetchHelyek();
     }, []);
 
-    const fetchHely = async () => {
-        const res = await axios.get("api.php");
-        setHely(res.data.readData);
+    const fetchHelyek = async () => {
+        const res = await axios.get("http://localhost/adatb/api.php");
+        setHelyek(res.data.readData);
         setMessage(a => a + " " + res.data.status);
     };
 
     const submit = async () => {
         var res;
         if (editId) {
-            res = await axios.put("api.php", { id: editId, kerulet, cim });
+            res = await axios.put("http://localhost/adatb/api.php", { id: editId, kerulet, cim });
             setEditId(null);
         } else {
-            res = await axios.post("api.php", { kerulet, cim });
+            res = await axios.post("http://localhost/adatb/api.php", { kerulet, cim });
         }
         setMessage(res.data.status);
         setKerulet("");
@@ -32,15 +32,15 @@ function Axios() {
         fetchHely();
     };
 
-    const editHely = (hely) => {
+    const editHelyek = (hely) => {
         setEditId(hely.id);
         setKerulet(hely.kerulet);
         setCim(hely.cim);
     };
 
-    const deleteHely = async (id) => {
+    const deleteHelyek = async (id) => {
         if (!confirm("Kitöröli ezt a helyet?")) return;
-        const res = await axios.delete("api.php", { data: { id } });
+        const res = await axios.delete("http://localhost/adatb/api.php", { data: { id } });
         setMessage(res.data.status);
         fetchUsers();
     };
@@ -65,15 +65,15 @@ function Axios() {
                         </tr>
                     </thead>
                     <tbody>
-                        {hely?.map((hely) => (
+                        {helyek.map((hely) => (
                             <>
                                 <tr>
                                     <td>{hely.id}</td>
                                     <td>{hely.kerulet}</td>
                                     <td>{hely.cim}</td>
                                     <td>
-                                        <button onClick={() => editHely(hely)}>Edit</button>
-                                        <button onClick={() => deleteHely(hely.id)}>Delete</button>
+                                        <button onClick={() => editHelyek(hely)}>Edit</button>
+                                        <button onClick={() => deleteHelyek(hely.id)}>Delete</button>
                                     </td>
                                 </tr>
                             </>
