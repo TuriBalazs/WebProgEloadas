@@ -6,12 +6,12 @@ import AddFajtaForm from "./reactCrudComponents/AddFajtaForm"
 const React2 = () => {
 
     const fajtakData = [
-        { id: 1, name: "papír" },
-        { id: 2, name: "elem" },
-        { id: 3, name: "hungarocel" },
-        { id: 4, name: "festék" },
-        { id: 5, name: "zöldhulladék" },
-        { id: 6, name: "lom" }
+        { id: 1, nev: "papír" },
+        { id: 2, nev: "elem" },
+        { id: 3, nev: "hungarocel" },
+        { id: 4, nev: "festék" },
+        { id: 5, nev: "zöldhulladék" },
+        { id: 6, nev: "lom" }
     ];
     const [fajtak, setFajtak] = useState(fajtakData);
     const [currentFajta, setCurrentFajta] = useState("");
@@ -37,7 +37,7 @@ const React2 = () => {
 
     return (
         <div>
-            <h1>CRUD App with Hooks</h1>
+            <h1>React CRUD aplikáció!</h1>
             <div>
                 <h2>{editing ? "Edit fajta" : "Add fajta"}</h2>
                 {!editing ? (
