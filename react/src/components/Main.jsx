@@ -3,10 +3,28 @@ function Main() {
     <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content text-center">
     <div className="max-w-md">
-      <h1 className="text-5xl font-bold">Hello there</h1>
-      <p className="py-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in bibendum libero. Nunc laoreet magna eu tortor viverra vulputate. Duis efficitur turpis ut arcu sollicitudin pulvinar. Praesent eget feugiat lorem. In id urna vitae massa venenatis placerat vitae quis libero. Sed eget lacus gravida nibh condimentum tristique ac in ipsum. Aliquam venenatis mauris ipsum, a dictum tellus tincidunt a. Integer feugiat tellus id arcu lacinia molestie. Nunc sed blandit metus. Duis sapien magna, ultricies sed elit et, scelerisque venenatis velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum tincidunt lacus gravida, gravida lorem et, fringilla dolor.Vivamus lobortis nisl a urna auctor, a sollicitudin massa tempus. Nullam fermentum, nisi ac aliquet congue, ex sem mollis ex, non facilisis libero sapien quis quam. Sed nec nisi nec ligula rutrum porttitor. Etiam posuere feugiat turpis, eu tincidunt orci posuere non. Aenean maximus, libero tincidunt lacinia scelerisque, mi velit tempus velit, in accumsan tellus sapien sed velit. Nulla aliquam dui erat, et blandit nibh vulputate non. Vestibulum nec feugiat magna. Curabitur faucibus auctor fermentum. Nunc ante lacus, aliquet quis vehicula vel, cursus lobortis magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse auctor tellus pharetra nibh accumsan pulvinar. Praesent nec purus dictum urna ullamcorper congue. Nullam tristique non sapien sit amet consequat. Quisque egestas est ac eros sodales, sit amet mattis nisi euismod. Phasellus viverra urna eros, eget sagittis felis mattis sed. Phasellus elit lorem, bibendum ac bibendum ac, semper et ipsum. Etiam scelerisque rutrum elit, ut interdum libero posuere a. Donec in vestibulum dui. Vestibulum molestie tincidunt mauris eu aliquam. Fusce maximus sem sit amet consectetur malesuada. Nunc finibus maximus velit vel faucibus. Mauris eleifend non tellus id iaculis. Suspendisse imperdiet sodales nisi eget pharetra. Proin eget massa elit. Sed posuere nibh at dictum fringilla. Etiam rutrum laoreet vulputate. Donec nisi sapien, ornare non magna consequat, varius tempor turpis. Suspendisse facilisis diam vel risus congue pulvinar. Donec velit sem, dapibus nec nulla vel, porttitor elementum ipsum. Donec tristique maximus libero interdum porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam enim risus, pharetra at nunc sit amet, sollicitudin accumsan felis. Sed commodo nulla sapien, nec consectetur libero eleifend blandit. Integer lacinia sem a turpis vulputate ornare. Suspendisse nec hendrerit leo. Cras fringilla massa ac neque ultrices, fringilla ullamcorper metus tempus. Donec consectetur quam ac nunc porta, quis hendrerit erat tempus. Curabitur ornare ac leo volutpat semper. Mauris at nisi consequat, convallis tortor eu, suscipit leo. Ut auctor placerat mattis. Nullam at lorem ut leo congue elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec placerat porttitor eros. Maecenas ultrices, eros ac malesuada tempus, sapien neque semper elit, sit amet interdum ipsum ligula lacinia dolor. Quisque consequat nulla id dolor eleifend, ac ultricies mauris mattis.
-      </p>
+      <h1 className="text-5xl font-bold">Üdvözöljük</h1>
+      <p className="py-6">Köszöntjük a fő oldalunkon, ahol rövid leírást találhat a különböző aplikáciokról.</p>
+      <br/>
+      <h2>Javascript aplikáció</h2>
+      <p className="py-6">Egy egyszerü CRUD alkalmazás javascript használatával ami egy adatbázis adatait irja ki és helyben tárolja.</p>
+      <br/>
+      <h2>React CRUD aplikáció</h2>
+      <p className="py-6">Egy egyszerü CRUD alkalmazás csak react használatával. A funkciója a javascript alkalmazáshoz hasonló.</p>
+      <br/>
+      <h2>SPA</h2>
+      <p className="py-6">Az SPA (single page applicatiom) 2 egyoldalas alkalmazást tartalmaz. Egy base64 konvertelt és egy tetris játékot</p>
+      <br />
+      <h2>Fetch API aplikáció</h2>
+      <p className="py-6">Egy javascript Fetch alkalmazás ami egy adatbázis adatait kezeli. Ennek az alapja az ugynevezett Ajax</p>
+      <br />
+      <h2>Axios aplikáció</h2>
+      <p className="py-6">Egy React Axios alkalmazás ami egy adatbázis adatait kezeli.</p>
+      <br />
+      <h2>OOJS aplikáció</h2>
+      <p className="py-6">Egy objektul orintált grafikus javascript alkalmazás</p>
+      <br />
+      <p className="py-6"> Köszönjük hogy megnézte veboldalunkat.</p>
     </div>
   </div>
 </div>

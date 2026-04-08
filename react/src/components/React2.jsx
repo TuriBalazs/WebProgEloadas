@@ -36,9 +36,9 @@ const React2 = () => {
 
 
     return (
-        <div>
+        <div className="w-full">
             <h1>React CRUD aplikáció!</h1>
-            <div>
+            <div className="w-full">
                 <h2>{editing ? "Edit fajta" : "Add fajta"}</h2>
                 {!editing ? (
                     <AddFajtaForm
@@ -53,7 +53,7 @@ const React2 = () => {
                     />
                 )}
             </div>
-            <h2>Fajták listája</h2>
+            <h2>Fajták listája:</h2>
             <div className="w-full lg:max-w-full lg:flex">
                 <div className="grid grid-cols-3 items-center p-10">
                     <Fajta fajtak={fajtak} editRow={editRow} deleteFajta={deleteFajta} />

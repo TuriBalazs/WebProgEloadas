@@ -1,13 +1,13 @@
 import React from "react";
 
 const Fajta = props => (
-  <div className="card w-96 bg-base-100 card-xl shadow-sm m-5">
+  <div className="card bg-neutral text-neutral-content w-96">
 
 
     {props.fajtak.length > 0 ? (
       props.fajtak.map(fajta => (
 
-        <div className="card-body" key={fajta.id}>
+        <div className="card-body items-center text-center" key={fajta.id}>
           <h2 className="card-title">{fajta.nev}</h2>
           <div className="justify-end card-actions">
             <button className="btn btn-primary" onClick={() => { props.editRow(fajta); }}>Modosítás</button>
@@ -16,7 +16,7 @@ const Fajta = props => (
         </div>
       ))
     ) : (
-      <div className="card-body">
+      <div className="card-body items-center text-center">
         <h2 className="card-title">Nincs adat!</h2>
         <p>Jelenleg nincsenek adatok.</p>
 
