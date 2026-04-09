@@ -20,14 +20,14 @@ function App() {
       <Router>
         <Header headerText={"Web programozás-1 Előadás házi feladat"} />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/Fetchapi" element={<Fetchapi />} />
-          <Route path="/React" element={<React2 />} />
-          <Route path="/Axios" element={<Axios />} />
-          <Route path="/Oojs" element={<Oojs />} />
-          <Route path="/Javascript" element={<Javascript />} />
-          <Route path="/Spa" element={<Spa />} />
-          <Route path="*" element={<Navigate to={"/"} />} />
+          <Route path="/eloadas" element={<Main />} />
+          <Route path="/eloadas/Fetchapi" element={<Fetchapi />} />
+          <Route path="/eloadas/React" element={<React2 />} />
+          <Route path="/eloadas/Axios" element={<Axios />} />
+          <Route path="/eloadas/Oojs" element={<Oojs />} />
+          <Route path="/eloadas/Javascript" element={<Javascript />} />
+          <Route path="/eloadas/Spa" element={<Spa />} />
+          <Route path="*" element={<Navigate to={"/eloadas"} />} />
         </Routes>
       </Router>
       <Footer />

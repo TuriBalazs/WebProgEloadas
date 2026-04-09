@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Ápr 02. 14:22
+-- Létrehozás ideje: 2026. Ápr 08. 12:18
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `diak` (
   `diakaz` int(11) NOT NULL,
-  `nev` varchar(20) NOT NULL,
+  `nev` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `szulido` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `diak`
@@ -57,8 +57,8 @@ INSERT INTO `diak` (`diakaz`, `nev`, `szulido`) VALUES
 
 CREATE TABLE `fajta` (
   `id` int(11) NOT NULL,
-  `nev` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nev` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `fajta`
@@ -94,7 +94,7 @@ INSERT INTO `fajta` (`id`, `nev`) VALUES
 CREATE TABLE `gyujt` (
   `helyid` int(11) NOT NULL,
   `fajtaid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `gyujt`
@@ -363,7 +363,7 @@ CREATE TABLE `hely` (
   `id` int(11) NOT NULL,
   `kerulet` varchar(10) NOT NULL,
   `cim` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `hely`
@@ -398,12 +398,12 @@ CREATE TABLE `munka` (
   `munkaid` int(11) NOT NULL,
   `mhelyid` int(11) DEFAULT NULL,
   `diakaz` int(11) DEFAULT NULL,
-  `allas` varchar(20) NOT NULL,
+  `allas` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `datum` date NOT NULL,
   `oradij` int(11) NOT NULL,
   `oraszam` int(11) NOT NULL,
   `kozepiskolas` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `munka`
@@ -460,9 +460,9 @@ INSERT INTO `munka` (`munkaid`, `mhelyid`, `diakaz`, `allas`, `datum`, `oradij`,
 
 CREATE TABLE `munkaado` (
   `mhelyid` int(11) NOT NULL,
-  `nev` varchar(25) NOT NULL,
-  `telepules` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nev` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telepules` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `munkaado`
@@ -544,7 +544,7 @@ ALTER TABLE `fajta`
 -- AUTO_INCREMENT a táblához `hely`
 --
 ALTER TABLE `hely`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT a táblához `munka`

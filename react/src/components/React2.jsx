@@ -37,9 +37,10 @@ const React2 = () => {
 
     return (
         <div className="w-full">
-            <h1>React CRUD aplikáció!</h1>
-            <div className="w-full">
-                <h2>{editing ? "Edit fajta" : "Add fajta"}</h2>
+            <h1 className="badge badge-primary badge-xl m-2">React CRUD aplikáció!</h1>
+            <div className="w-full items-center">
+                <div className="badge badge-primary badge-lg m-2"><h2>{editing ? "Edit fajta" : "Add fajta"}</h2></div>
+                
                 {!editing ? (
                     <AddFajtaForm
                         addFajta={addFajta}
@@ -53,9 +54,9 @@ const React2 = () => {
                     />
                 )}
             </div>
-            <h2>Fajták listája:</h2>
-            <div className="w-full lg:max-w-full lg:flex">
-                <div className="grid grid-cols-3 items-center p-10">
+            <h2 className="badge badge-primary badge-lg m-2">Fajták listája:</h2>
+            <div className="w-full">
+                <div>
                     <Fajta fajtak={fajtak} editRow={editRow} deleteFajta={deleteFajta} />
                 </div>
             </div>
