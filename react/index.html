@@ -9,5 +9,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="./backend/script.js"></script>
+    <script src="./backend/script2.js"></script>
+    <script type="text/javascript" src="./backend/feladat3.js"></script>
+    <script type="text/javascript">
+        var objects = [];
+        objects.push(new EgyetemiDolgozo('Kovács Melinda', 'Budapest', 250000));
+        objects.push(new Tanar('Kovács Izabella', 'Kecskemét', 300000, 'Informatika'));
+        objects.push(new Tanar('Szabó Péter', 'Szeged', 275000,'Gépész'));
+        console.log(objects);
+    </script>
   </body>
 </html>

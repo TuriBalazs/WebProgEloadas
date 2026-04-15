@@ -1,18 +1,44 @@
 function Javascript() {
     return (
-        <div className="overflow-x-auto">
-            <table className="table table-xs">
-                <thead>
-                    <tr>
-                        <th>Kerület</th>
-                        <th>Cím</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
+        <div>
+            <div class="employee-form">
+                <form onsubmit="event.preventDefault();onFormSubmit();">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName"/>
+                    </div>
+                    <div>
+                        <label>Email Id</label>
+                        <input type="text" name="email" id="email"/>
+                    </div>
+                    <div>
+                        <label>Salary</label>
+                        <input type="text" name="salary" id="salary"/>
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" id="city"/>
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit"/>
+                    </div>
+                </form>
+            </div>
+            <br />
+            <div className="overflow-x-auto">
+                <table className="table table-xs" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Kerület</th>
+                            <th>Cím</th>
 
-                </tbody>
-            </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
