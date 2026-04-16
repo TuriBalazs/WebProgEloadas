@@ -130,7 +130,7 @@ CREATE TABLE `gyujt` (
 
 --
 -- A tábla adatainak kiíratása `gyujt`
--- 
+--
 
 INSERT INTO `gyujt` (`helyid`, `fajtaid`) VALUES
 (1, 1),
