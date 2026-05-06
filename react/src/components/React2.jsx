@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Fajta from "./reactCrudComponents/Fajta"
-import EditFajtaForm from "./reactCrudComponents/EditFajtaForm"
-import AddFajtaForm from "./reactCrudComponents/AddFajtaForm"
+import Form from "./reactCrudComponents/FajtaForm"
 
 const React2 = () => {
 
@@ -22,7 +21,6 @@ const React2 = () => {
         setFajtak([...fajtak, fajta]);
     };
     const deleteFajta = id => {
-        setEditing(false);
         setFajtak(fajtak.filter(fajta => fajta.id !== id));
     };
     const editRow = fajta => {
@@ -31,7 +29,7 @@ const React2 = () => {
     };
     const updateFajta = (id, updatedFajta) => {
         setEditing(false);
-        setFajta(fajtak.map(fajta => (fajta.id === id ? updatedFajta : fajta)));
+        setFajtak(fajtak.map(fajta => (fajta.id === id ? updatedFajta : fajta)));
     };
 
 
@@ -40,19 +38,12 @@ const React2 = () => {
             <h1 className="badge badge-primary badge-xl m-2">React CRUD aplikáció!</h1>
             <div className="w-full items-center">
                 <div className="badge badge-primary badge-lg m-2"><h2>{editing ? "Edit fajta" : "Add fajta"}</h2></div>
-                
-                {!editing ? (
-                    <AddFajtaForm
-                        addFajta={addFajta}
-                    />
-                ) : (
-                    <EditFajtaForm
-                        setEditing={setEditing}
-                        currentFajta={currentFajta}
-                        setCurrentFajta={setCurrentFajta}
+                    <Form
+                        addFajta = {addFajta}
+                        editing={editing}
+                        updatedFajta={currentFajta}
                         updateFajta={updateFajta}
                     />
-                )}
             </div>
             <h2 className="badge badge-primary badge-lg m-2">Fajták listája:</h2>
             <div className="w-full">

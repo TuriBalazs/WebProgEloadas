@@ -1,37 +1,14 @@
+
+
 function Fetchapi() {
     return (
-        <div>
-            <h2>Fetch API - CRUD Application</h2>
-        <p id="message"></p>
-        <h3 id="addedit"></h3>
-        <form id="userForm">
-            <input type="hidden" id="id"/>
-            <div>
-                <div>
-                    <input type="text" id="name" placeholder="Name" required/>
-                </div>
-                <div>
-                    <input type="email" id="email" placeholder="Email" required/>
-                </div>
-                <div>
-                    <button>Save</button>
-                </div>
-            </div>
-        </form>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                        </tr>
-                    </thead>
-                    <tbody id="userTable">
-                        
-                    </tbody>
-                </table>
+        <div className="w-full">
+            <div className="card lg:card-side bg-base-100 shadow-sm flex justify-center">
+                <figure className="w-lg ">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UGCGzkAKUdO5PE2AcpiAOGQxZ4laUr5hzA&s"
+                        alt="WIP" />
+                </figure>
             </div>
         </div>
     )
